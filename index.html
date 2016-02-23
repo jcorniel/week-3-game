@@ -1,0 +1,72 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+	<title>Plank Man</title>
+</head>
+<body>
+
+<div id ="game">
+
+</div>
+
+<script type="text/javascript">
+debugger;
+
+var userGuessCount = 0;
+var userIncorrectGuessCount = 0;
+
+var libaryOfWords = ['apple', 'cat', 'surface', 'cookie', 'coding', 'sneeze'];
+
+var	randomWordIndex = Math.floor(Math.random()*libaryOfWords.length);
+
+var randomWord = libaryOfWords[randomWordIndex];
+
+var guessContainer = [];
+
+for (i=0; i=randomWord.length; i++){
+	guessContainer[i]='_';
+
+}
+
+var randomWordArray = randomWord.split("");
+
+console.log(randomWordArray);
+
+console.log(guessContainer);
+
+document.onekeyup = function(event) {
+
+
+var letterPressed = String.fromCharCode(event.keyCode);
+console.log(letterPressed);
+
+userGuessCount=userGuessCount+1;
+
+for(i=0;i=randomWordArray.length;i++){
+
+	letterPressed=letterPressed.toLowerCase();
+	if(randomWordArray[i]===letterPressed){
+
+		guessContainer[i]=letterPressed;
+
+		console.log(guessContainer);
+		console.log(randomWordArray);
+
+}
+    else{
+
+var currentGuessContainerString = guessContainer.toString();
+var randomWordArrayString = randomWordArray.toString();
+
+console.log(currentGuessContainerString);
+console.log(randomWordArrayString);
+
+if(currentGuessContainerString===randomWordArrayString){
+    alert("you win!");
+}
+
+
+
+</script>
+</body>
+</html>
